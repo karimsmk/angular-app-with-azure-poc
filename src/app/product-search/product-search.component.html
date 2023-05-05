@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Search</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body> 
+
+    <div class="container my-4">
+        <h1 class="text-center mb-4" style="color: #1a8d8db0; font-family:monospace;">Seacrh for Products</h1>
+        <div class="row mb-4 justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input [(ngModel)]="searchInput" class="form-control" placeholder="Search for Product">
+                    <button class="btn btn-primary" (click)="search()">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Model</th>
+                    <th>Price($)</th>
+                    <th>Rating</th>
+                    <!--                     <th>Actions</th>  -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filteredProducts">
+                    <td>{{item.productId}}</td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.productDescription}}</td>
+                    <td>{{item.productModel}}</td>
+                    <td>{{item.productPrice}}</td>
+                    <td>{{item.productRating}}</td>
+                    <!--
+                        <td>
+                        <button class="btn btn-sm btn-outline-primary me-2 mb-1" data-bs-toggle="modal" data-bs-target="#editProductModal">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteProductModal">
+                            Delete
+                        </button>
+                    </td>
+                    -->
+                </tr>
+                <div *ngIf="filteredProducts.length === 0">
+                    The product is not available.
+                </div>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 WinWire Technologies. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>    

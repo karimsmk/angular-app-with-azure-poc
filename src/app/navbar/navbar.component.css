@@ -1,0 +1,18 @@
+.toolbar-link {
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .toolbar-link:hover {
+    background-color: #10eb90;
+  }
+  .toolbar-link.active {
+    background-color: #a8d3c1;
+  }
+
+  
+  
