@@ -10,7 +10,7 @@ import { API_URL } from 'src/config';
   styleUrls: ['./advanced-search.component.css']
 })
 export class AdvancedSearchComponent {
-  searchData = { name: '', model: '', price: '', rating: '' };
+  searchData = { name: '', model: '', price: '', rating: '', manufacturingDate: '' };
   filteredProducts: any[] = [];
   productsList$!: Observable<any[]>;
   apiUrl=API_URL;
@@ -23,13 +23,14 @@ export class AdvancedSearchComponent {
   }
 
   onSubmit() {
-    if (this.searchData.name || this.searchData.model || this.searchData.price || this.searchData.rating) {
+    if (this.searchData.name || this.searchData.model || this.searchData.price || this.searchData.rating || this.searchData.manufacturingDate) {
       const url = this.apiUrl+`/Products/AdvancedSearch`;
       const params = new HttpParams()
         .set('productName', this.searchData.name)
         .set('productModel', this.searchData.model)
         .set('productPrice', this.searchData.price)
-        .set('productRating', this.searchData.rating);
+        .set('productRating', this.searchData.rating)
+        .set('manufacturingDate', this.searchData.manufacturingDate);
   
       this.http.get(url, { params }).subscribe((data: any) => {
         this.filteredProducts = data;

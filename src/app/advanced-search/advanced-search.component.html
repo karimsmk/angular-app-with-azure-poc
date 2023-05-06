@@ -23,6 +23,12 @@
                     <input [(ngModel)]="searchData.price" class="form-control" placeholder="Product Price" style="margin-bottom: 10px;">
                     <input [(ngModel)]="searchData.rating" class="form-control" placeholder="Product Rating" style="margin-bottom: 10px;">
                     <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Manufacturing Date" [(ngModel)]="searchData.manufacturingDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      
                     </div>
                     
                 </div>
