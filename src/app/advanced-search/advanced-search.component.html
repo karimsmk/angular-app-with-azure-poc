@@ -41,6 +41,8 @@
                         <th>Model</th>
                         <th>Price($)</th>
                         <th>Rating</th>
+                        <th>Store Name</th>
+                        <th> Manufacturing Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +54,8 @@
                         <td>{{item.productModel}}</td>
                         <td>{{item.productPrice}}</td>
                         <td>{{item.productRating}}</td>
+                        <td>{{item.storeName}}</td>
+                        <td>{{item.manufacturingDate}}</td>
                     
                     </tr>
                     <div *ngIf="filteredProducts.length === 0">
