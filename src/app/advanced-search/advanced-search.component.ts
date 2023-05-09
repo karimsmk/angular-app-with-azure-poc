@@ -14,6 +14,7 @@ export class AdvancedSearchComponent {
   filteredProducts: any[] = [];
   productsList$!: Observable<any[]>;
   apiUrl = API_URL;
+  
 
   constructor(private http: HttpClient, private productsApiService: ProductsApiServiceService) {}
 
@@ -21,6 +22,8 @@ export class AdvancedSearchComponent {
     this.productsList$ = this.productsApiService.getProductsList();
     this.productsList$.subscribe(products => this.filteredProducts = products);
   }
+
+  
 
   onSubmit() {
     if (
