@@ -4,8 +4,10 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { ProductSearchComponent } from './product-search/product-search.component';
 
 const routes: Routes = [
-  {path:'advanced-search', component:AdvancedSearchComponent},
-  {path:'product-search',component:ProductSearchComponent}
+  {path:'',component:ProductSearchComponent},
+  {path:'advanced-search', component:AdvancedSearchComponent}
+
+
 
 ];
 
